@@ -1,0 +1,22 @@
+# WordPress
+wp-config.php
+wp-content/uploads/
+*.log
+
+# Secrets
+*.env
+secrets/
+*.key
+
+# Backups
+*.backup
+*.sql
+*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
