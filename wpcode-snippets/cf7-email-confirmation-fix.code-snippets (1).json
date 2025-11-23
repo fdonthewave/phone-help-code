@@ -1,1 +1,0 @@
-{"generator":"Code Snippets v3.9.2","date_created":"2025-11-23 19:02","snippets":[{"id":9,"name":"CF7 Email Confirmation Fix","code":"\/\/ Force CF7 \u00e0 accepter les emails de confirmation\nadd_filter('wpcf7_validate_configuration', '__return_false');","active":true,"modified":"2025-10-29 08:55:02","revision":"1"}]}
