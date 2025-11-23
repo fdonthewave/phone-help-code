@@ -1,128 +1,181 @@
-# 📱 Phone-Help - WordPress Code Snippets
+# 📦 Code Snippets - Multi-Projets WordPress
 
-> Code snippets WordPress pour le site tele-consultation.com (Phone-Help)
-
-## 📋 Structure
-
-```
-wpcode-snippets/
-├── qualif-cardio/          # Qualification cardiologie
-│   ├── qualif-cardio-audit-v10.js
-│   └── qualif-cardio-formulaire-v55.js
-├── qualif-pneumo/          # Qualification pneumologie  
-│   ├── qualif-pneumo-audit.js
-│   ├── qualif-pneumo-audit-ordonnances.js
-│   ├── qualif-pneumo-formulaire-v10.js
-│   └── qualif-pneumo---demandes-ordonnancescertificats-v10.js
-├── tools/                  # Outils divers
-│   └── simulateur-rentabilite-madagascar.js
-└── fixes/                  # Corrections bugs
-    └── cf7-email-confirmation-fix.js
-```
-
-## 🔧 Installation
-
-Ces snippets sont gérés via [WPCode](https://wordpress.org/plugins/code-snippets/) sur WordPress.
-
-### Importer un snippet
-
-1. **WordPress** → Extensions → Code Snippets
-2. **Tools** → Import
-3. Sélectionner fichier `.js`
-4. Activer le snippet
-
-## 📝 Snippets disponibles
-
-### Qualification Cardiologie
-
-- **qualif-cardio-formulaire-v55** (Snippet ID: 6)
-  - Shortcode: `[qualif_cardio]`
-  - Formulaire qualification cardio complet
-  - Calcul facteurs risque + type RDV
-  - Sauvegarde BDD + email Brevo
-
-- **qualif-cardio-audit-v10** (Snippet ID: 7)
-  - Shortcode: `[qualif_cardio_audit]`
-  - Audit recherche qualifications
-  - Zoom intelligent localStorage
-
-### Qualification Pneumologie
-
-- **qualif-pneumo-formulaire-v10** (Snippet ID: 10)
-  - Shortcode: `[qualif_pneumo]`
-  - Formulaire qualification pneumo
-  - Calcul PA tabac + type RDV
-
-- **qualif-pneumo-audit** (Snippet ID: 11)
-  - Shortcode: `[pneumo_audit]`
-  - Recherche nom/prénom/tél/date
-  - Intégration Callibri
-
-- **qualif-pneumo-demandes-ordonnancescertificats** (Snippet ID: 12)
-  - Shortcode: `[qualif_pneumo_ordonnances]`
-  - Gestion demandes ordonnances/certificats
-  - Email auto médecin
-
-- **qualif-pneumo-audit-ordonnances** (Snippet ID: 13)
-  - Shortcode: `[qualif_pneumo_ordonnances_audit]`
-  - Audit demandes ordonnances
-
-### Outils
-
-- **simulateur-rentabilite-madagascar** (Snippet ID: 8)
-  - Shortcode: `[phone_help_simulator]`
-  - Simulateur rentabilité Pro-Assistante
-  - Calcul marges/profits multi-années
-
-### Fixes
-
-- **cf7-email-confirmation-fix** (Snippet ID: 9)
-  - Fix validation emails Contact Form 7
-  - Désactive vérification config
-
-## 🔗 Liens
-
-- **Site WordPress** : https://tele-consultation.com
-- **Admin WPCode** : https://tele-consultation.com/wp-admin/admin.php?page=wpcode
-- **Documentation Notion** : [GitHub Repositories](https://www.notion.so/2b4878e834f18124b9bdd0c9c6c9b122)
-
-## ⚠️ Prérequis
-
-### wp-config.php
-
-Certains snippets nécessitent des constantes dans `wp-config.php` :
-
-```php
-// Brevo API (emails)
-define('BREVO_API_KEY', 'votre-cle');
-define('BREVO_SENDER_EMAIL', 'scripts@phone-help.com');
-define('BREVO_SENDER_NAME', 'Phone-Help');
-define('BREVO_RECIPIENT_EMAIL', 'scripts@phone-help.com');
-```
-
-### Tables BDD
-
-Les snippets créent automatiquement leurs tables :
-- `wp_qualif_cardio_complete`
-- `wp_qualif_pneumo_amiotsimion`
-- `wp_qualif_pneumo_ordonnances`
-
-## 📊 Versions
-
-- **Cardio Formulaire** : v5.5 (21 Oct 2025)
-- **Cardio Audit** : v1.0 (13 Oct 2025)
-- **Pneumo Formulaire** : v1.0 (10 Nov 2025)
-- **Pneumo Audit** : v1.0 (10 Nov 2025)
-- **Pneumo Demandes** : v1.0 (19 Nov 2025)
-- **Pneumo Audit Ordonnances** : v1.0 (19 Nov 2025)
-- **Simulateur** : v1.0 (17 Oct 2025)
-- **CF7 Fix** : v1.0 (29 Oct 2025)
-
-## 📄 Licence
-
-Code propriétaire Phone-Help © 2025
+Repository centralisé des snippets WPCode pour les projets web médicaux.
 
 ---
 
-**Dernière mise à jour** : 23 Novembre 2025
-**Repository** : https://github.com/fdonthewave/phone-help-code
+## 📁 STRUCTURE
+
+```
+wpcode-snippets/
+├── phone-help/              # 🏥 Phone-Help (Secrétariat médical)
+│   ├── qualif-cardio/       # Qualifications cardiologie (2 snippets)
+│   ├── qualif-pneumo/       # Qualifications pneumologie (4 snippets)
+│   ├── tools/               # Outils (1 snippet)
+│   └── fixes/               # Correctifs (1 snippet)
+│
+└── tele-consultation/       # 💻 Téléconsultation Furge (Dr Camille Furgé)
+    ├── client-paiement.js       # Interface paiement Stripe
+    ├── client-consultation.js   # Interface consultation patient
+    └── admin-dashboard.js       # Dashboard admin médecin
+```
+
+---
+
+## 🏥 PHONE-HELP (8 snippets)
+
+**Site** : phone-help.fr  
+**Mission** : Secrétariat médical téléphonique pour cabinets médicaux
+
+### Qualifications Cardiologie (2)
+- `qualif-cardio-audit-v10.js` (32 KB, 692 lignes)
+- `qualif-cardio-formulaire-v55.js` (65 KB, 1367 lignes)
+
+### Qualifications Pneumologie (4)
+- `qualif-pneumo-audit.js` (21 KB, 630 lignes)
+- `qualif-pneumo-audit-ordonnances.js` (18 KB, 424 lignes)
+- `qualif-pneumo-formulaire-v10.js` (45 KB, 1302 lignes)
+- `qualif-pneumo-demandes-ordonnancescertificats-v10.js` (43 KB, 1236 lignes)
+
+### Tools (1)
+- `simulateur-rentabilite-madagascar.js` (40 KB, 946 lignes)
+
+### Fixes (1)
+- `cf7-email-confirmation-fix.js` (285 bytes, 10 lignes)
+
+---
+
+## 💻 TELE-CONSULTATION (3 snippets)
+
+**Site** : tele-consultation.com  
+**Mission** : Plateforme téléconsultation Dr Camille Furgé
+
+### Client Paiement
+**Fichier** : `client-paiement.js` (20 KB)  
+**Shortcode** : `[paiement_furge]`  
+**Fonction** : Formulaire paiement Stripe avec 3 options
+- 💳 Prépaiement (avant consultation)
+- 📅 Post-paiement (après consultation)
+- ✅ Déjà régularisé (accès direct)
+
+**Features** :
+- Intégration Stripe
+- Validation temps réel
+- LocalStorage pour tracking
+- Responsive mobile
+- Design médical épuré (gradient violet)
+
+### Client Consultation
+**Fichier** : `client-consultation.js` (46 KB)  
+**Shortcode** : `[consultation_furge]`  
+**Fonction** : Interface vidéo consultation patient
+
+**Features** :
+- Formulaire médical pré-consultation
+- Salle d'attente virtuelle
+- Motif de consultation
+- Antécédents médicaux
+- Upload documents médicaux
+- Design responsive
+
+### Admin Dashboard
+**Fichier** : `admin-dashboard.js` (33 KB)  
+**Shortcode** : `[dashboard_furge]`  
+**Fonction** : Dashboard médecin
+
+**Features** :
+- Gestion consultations
+- Liste patients
+- Statistiques
+- Export données
+- Interface admin sécurisée
+
+---
+
+## 🔧 UTILISATION
+
+### Import dans WordPress
+
+1. **WPCode Plugin** (recommandé)
+```
+Extensions → WPCode → + Ajouter
+Copier/coller le contenu du fichier .js
+Type: PHP Snippet
+```
+
+2. **functions.php**
+```php
+// Copier directement le code dans functions.php
+// ⚠️ Attention : backup avant modification
+```
+
+### Shortcodes disponibles
+
+**Phone-Help** :
+- Pas de shortcodes (snippets backend uniquement)
+
+**Téléconsultation** :
+- `[paiement_furge]` - Page paiement
+- `[consultation_furge]` - Page consultation patient
+- `[dashboard_furge]` - Dashboard médecin
+
+---
+
+## 📊 STATISTIQUES
+
+| Projet | Snippets | Lignes | Taille |
+|--------|----------|---------|--------|
+| Phone-Help | 8 | ~5 000 | 263 KB |
+| Télé-consultation | 3 | ~1 500 | 100 KB |
+| **TOTAL** | **11** | **~6 500** | **363 KB** |
+
+---
+
+## 🚀 VERSIONS
+
+### Phone-Help
+- **Export** : 23 novembre 2025
+- **Source** : WPCode v3.6.8
+
+### Télé-consultation
+- **Export** : 23 novembre 2025  
+- **Source** : WPCode v3.9.2
+- **Dernière modification** : 1er octobre 2025
+
+---
+
+## 📝 NOTES
+
+### Phone-Help
+- Snippets qualifications = formulaires complexes multi-étapes
+- Audit = validation qualité des télépermanences
+- Simulateur Madagascar = calcul rentabilité outsourcing
+
+### Télé-consultation
+- Stripe configuré en mode test (remplacer URLs prod)
+- LocalStorage pour persistance données patient
+- Design cohérent gradient violet (#667eea → #764ba2)
+- Compatible mobile-first
+
+---
+
+## 🔐 SÉCURITÉ
+
+- ✅ Tous les snippets validés en production
+- ✅ Escape SQL/XSS automatique WordPress
+- ✅ Nonces CSRF sur formulaires
+- ✅ Validation côté serveur + client
+- ⚠️ Stripe : remplacer clés test par prod
+
+---
+
+## 📬 CONTACT
+
+**Développeur** : François Danaels  
+**Email** : contact@pro-assistante.fr  
+**GitHub** : @fdonthewave
+
+---
+
+*Dernière mise à jour : 23 novembre 2025*  
+*Repository : github.com/fdonthewave/phone-help-code*
